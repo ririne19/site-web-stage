@@ -27,17 +27,30 @@ html, body {
 }
 
 .header-top {
-    display: grid;
-    grid-template-columns: 1fr minmax(0, 660px) 1fr;
+    width: 100%;
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
+}
+
+.logo-mobile {
+    display: none;
+}
+
+.logo-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .search-bar {
     width: 100%;
+    max-width: 660px;
     height: 100%;
     display: flex;
     align-items: center;
+    margin: 0 auto;
     background-color: #ff9500;
     border-radius: 28px;
     padding: 20px 15px;
@@ -94,20 +107,42 @@ html, body {
     font-size: 60px;
     font-weight: bold;
     color: #ff9500;
+    width: 100px;
+    height: 100px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.nav {
+    width: 100%;
+    max-width: 400px;
+    background-color: transparent;
+    border: none;
+    font-family: "Montserrat", sans-serif;
 }
 
 .nav ul {
     display: flex;
-    justify-content: center;
-    gap: 28px;
+    justify-content: space-between;
+    width: 100%;
     list-style: none;
+}
+
+.nav li {
+    position: relative;
 }
 
 .nav a {
     text-decoration: none;
-    color: #1f1f1f;
-    font-size: 16px;
-    font-weight: 600;
+    color: #000000;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .nav a:hover {
@@ -218,4 +253,80 @@ footer {
     width: 100%;
     text-align: center;
     color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+    }
+
+    .header-top {
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 0.5fr;
+        gap: 10px;
+    }
+
+    .logo-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #ff9500;
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo-mobile img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .search-bar {
+        padding: 12px 12px;
+        border-radius: 20px;
+        height: auto;
+    }
+
+    .search-bar input {
+        font-size: 12px;
+    }
+
+    .search-bar svg {
+        width: 14px;
+        height: 14px;
+        margin-right: 6px;
+    }
+
+    .language-selector select {
+        padding: 8px 10px;
+        font-size: 12px;
+        border-radius: 15px;
+    }
+
+    .header-bottom {
+        margin-top: -10px;
+    }
+
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .nav a {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 769px) {
+    .search-bar {
+        transform: translateX(40px);
+    }
 }

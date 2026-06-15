@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Action Chatbot Skincare</title>
     <link rel="stylesheet" href="../Styles/action.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Styles/chatbot.css">
 </head>
 <body>
     <header class="header">
@@ -41,11 +42,13 @@
         <section class="action-hero">
             <div class="action-copy">
                 <p class="eyebrow">Action</p>
-                <h1>Action Chatbot Skincare</h1>
-                <p class="hero-desc">Découvre l’action dédiée au chatbot pour la recherche en skincare. Cette page présente le contexte, les avantages et les prochaines étapes de l’expérience utilisateur.</p>
+                <h1>Chatbot Skincare</h1>
+                <p class="hero-desc">Découvre l'action dédiée au chatbot pour la recherche en skincare. Cette page présente le contexte, les avantages et les prochaines étapes de l'expérience utilisateur.</p>
             </div>
             <div class="action-media">
-                <div class="action-box"></div>
+                <div class="action-box">
+                    <img src="../Divers/visageSkincare.jpg" alt="image visage femme">
+                </div>
             </div>
         </section>
 
@@ -53,7 +56,7 @@
             <div class="action-cards">
                 <div class="action-card">
                     <h3>Objectif</h3>
-                    <p>Permettre aux utilisateurs de poser des questions personnalisées sur les soins de la peau, avec des recommandations basées sur la recherche.</p>
+                    <p>Permettre aux utilisateurs de poser des questions personnalisées sur les soins de la peau, avec des recommandations personnalisées basées sur des données de produits pour le visage.</p>
                 </div>
                 <div class="action-card">
                     <h3>Résultats attendus</h3>
@@ -61,14 +64,72 @@
                 </div>
             </div>
             <div class="action-summary">
-                <p>Cette action facilite la collecte d’informations utilisateur et l’analyse des besoins pour produire des contenus plus pertinents.</p>
-                <a href="projet1.html" class="action-button">Voir le projet</a>
+                <p>Cette action permet à un utilisateur lambda d'avoir un conseiller personnel pour l'entretien et le bien-être de son visage. Le chatbot ne remplace pas un avis médical.</p>
             </div>
         </section>
+
+        <!-- ══ CHATBOT WIDGET ══════════════════════════ -->
+        <section class="chatbot-section">
+            <p class="chatbot-section-label">Essayez le conseiller IA</p>
+
+            <div id="chatbot-widget">
+                <div class="chat-main">
+
+                    <div class="chat-header">
+                        <h2>Analyse cutanée</h2>
+                        <div class="header-badge">
+                            <span class="badge-dot"></span>
+                            <span>IA active</span>
+                        </div>
+                    </div>
+
+                    <section class="chat-messages" id="chatMessages"></section>
+
+                    <div class="upload-zone" id="uploadZone">
+                        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" hidden />
+                        <div class="upload-zone-inner" id="uploadZoneInner">
+                            <div class="upload-icon">◎</div>
+                            <p class="upload-title">Déposer votre photo ici</p>
+                            <p class="upload-sub">jpg · png · webp · max 5 Mo</p>
+                            <button class="btn-upload" id="uploadBtn">Choisir une photo</button>
+                        </div>
+                    </div>
+
+                    <div class="chat-footer">
+                        <div class="suggestions" id="suggestions"></div>
+                        <div class="input-bar">
+                            <button class="btn-icon" id="inlineUploadBtn" title="Changer de photo" hidden>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <polyline points="21 15 16 10 5 21"/>
+                                </svg>
+                            </button>
+                            <input
+                                type="text"
+                                id="textInput"
+                                placeholder="Écrivez votre message…"
+                                autocomplete="off"
+                                disabled
+                            />
+                            <button class="btn-send" id="sendBtn" disabled>
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M22 2L11 13M22 2L15 22 11 13 2 9 22 2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- ════════════════════════════════════════════ -->
     </main>
 
     <footer>
         <p>Mentions légales</p>
     </footer>
+
+    <script src="../js/chatbot.js"></script>
 </body>
 </html>
